@@ -20,7 +20,7 @@ const io = new Server(server, {
 });
 
 app.use(router);
-app.use(cors());
+app.use(cors({ origin: "*" }));
 
 io.on("connection", (socket) => {
   socket.on("join", ({ name, room }, callback) => {
